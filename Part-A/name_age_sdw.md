@@ -47,7 +47,7 @@
 ### 2. Program Purpose
 
 > In one sentence, summarize the program's purpose **in your own words**.
->
+>The program is intended to figure out the user's birth year based on their age and the current year.
 > Do not copy the SRS or ask AI to generate your answer. You will use your understanding of the program's purpose when you write the documentation string (docstring) in your Python program.
 >
 > **Where to look:** [SRS](./analysis/name_age_srs.md) → `## 0. General Description`
@@ -55,8 +55,7 @@
 > **Prompt:** What is this program supposed to do for its user?
 >
 > Enter your response below.
-
-TODO: Replace this text with your one-sentence summary of the program's purpose
+The program finds the user's birth year and display's a message for them, it does this based on the age they enter and the current year.
 
 ### 3. Inputs, Processing, and Outputs
 
@@ -71,10 +70,12 @@ TODO: Replace this text with your one-sentence summary of the program's purpose
 > **Where to look:** [SRS](./analysis/name_age_srs.md) → `## 0. General Description` and `## 1. Functional Requirements`, especially requirements **1.1–1.4**
 >
 > **Prompt:** What information does the program receive or obtain? Identify each input or internally obtained value the program needs and where it comes from.
->
+
 > Enter your response below. Use a separate numbered bullet for each input.
 
-1. TODO: Replace with your first input and its source (e.g., user input, system value, internal value).
+1. The program first receives the user's name as a string input.
+2. The second piece of information the program obtains is the age of the user as an integer.
+3. Lastly, the program needs the current year in order to still function properly even when years pass. This information is an internally obtained integer value.
 
 > **Where to look:** [SRS](./analysis/name_age_srs.md) → `## 1. Functional Requirements`, especially requirement **1.3**
 >
@@ -82,7 +83,9 @@ TODO: Replace this text with your one-sentence summary of the program's purpose
 >
 > Enter your response below. Use a separate numbered bullet for each input.
 
-1. TODO: Replace with your first input and its data type (e.g., string, integer, float, Not specified).
+1. name input: string
+2. age input: integer
+3. current year: integer
 
 #### IPO: Processing
 
@@ -94,7 +97,7 @@ TODO: Replace this text with your one-sentence summary of the program's purpose
 >
 > Enter a brief description in your own words below. Use a separate numbered bullet for each process.
 
-1. TODO: Replace with your first processing step in your own words.
+1. Before the program produces its output, the birth year must be calculated by subtracting the age of the user from the current year.
 
 #### IPO: Outputs
 
@@ -106,7 +109,7 @@ TODO: Replace this text with your one-sentence summary of the program's purpose
 >
 > Enter your response below. Use a separate numbered bullet for each output.
 
-1. TODO: Replace with your first output and where it is displayed (e.g., console, file, GUI).
+1. The program must produce a message that state's the users name and year they were born. It will be displayed on the console.
 
 > **Where to look:** [SRS](./analysis/name_age_srs.md) → `## 1. Functional Requirements`, requirement **1.5**, and `## Sample Input and Output`
 >
@@ -114,7 +117,7 @@ TODO: Replace this text with your one-sentence summary of the program's purpose
 >
 > Enter your response below. Use a separate numbered bullet for each output format.
 
-1. TODO: Replace with your first output format.
+1. The output must be displayed in the format: Hello {name}! You were born in {year}.
 
 ### 4. Requirements in My Own Words
 
@@ -130,7 +133,7 @@ TODO: Replace this text with your one-sentence summary of the program's purpose
 >
 > Enter your response below in your own words.
 
-Replace this text with your explanation of requirement 1.2 in your own words.
+Be able to obtain the current age of the user as an integer in order to be able to calculate their birth year. The user should easily understand that the program requires their age when they are prompted: "How old are you?" 
 
 #### SRS Requirement 1.3 — Use the Age in an Arithmetic Calculation
 
@@ -140,7 +143,7 @@ Replace this text with your explanation of requirement 1.2 in your own words.
 >
 > Enter your response below in your own words.
 
-TODO: Replace this text with your explanation of requirement 1.3 in your own words.
+The program should easily be able to use the age the user inserted to calculate the birth year: the current year minus their age. To do this properly, the age must be an integer. 
 
 #### SRS Requirement 1.4 — Calculate the Approximate Birth Year
 
@@ -150,7 +153,7 @@ TODO: Replace this text with your explanation of requirement 1.3 in your own wor
 >
 > Enter your response below.
 
-Replace this text with your explanation of requirement 1.4 in your own words.
+The program must be able to successfully calculate the year the user was born by performing a subtraction. The current year minus their age. 
 
 #### SRS Requirement 1.5 — Display the Personalized Result
 
@@ -160,7 +163,7 @@ Replace this text with your explanation of requirement 1.4 in your own words.
 >
 > Enter your response below.
 
-TODO: Replace this text with your explanation of requirement 1.5 in your own words.
+The program should be able to run a personalized message that includes the user's name and calculated birth year.
 
 ### 5. Constraints and Special Cases
 
@@ -174,7 +177,8 @@ TODO: Replace this text with your explanation of requirement 1.5 in your own wor
 >
 > Enter your response below. Use a separate numbered bullet for each constraint.
 
-1. TODO: Replace with your first important constraint.
+1. Complete the program without prompting an error message and displaying the correct message in the correct format.
+2. Have the program be executed as a source file named name_age.py
 
 #### Special or Edge Cases
 
@@ -186,7 +190,11 @@ TODO: Replace this text with your explanation of requirement 1.5 in your own wor
 >
 > Enter your response below. Use a separate numbered bullet for each edge case.
 
-1. TODO: Replace with your first edge case.
+1. The program will use various edge cases such as inputting an age of zero.
+2. Negative age.
+3. Age over a hundred.
+4. Typical adult age
+5. Different input for name and age.
 
 ### 6. Analyze Checkpoint
 
@@ -242,8 +250,8 @@ TODO: Replace this text with your explanation of requirement 1.5 in your own wor
 > **Prompt:** What part of the design addresses this requirement? Briefly explain the connection.
 >
 > Enter your response below.
+The SRS, software requirement specifications, under functional requirements. To treat the entered age as an integer.
 
-TODO: Replace this text with your explanation of how the design addresses requirement 1.3.
 
 #### SRS Requirement 1.4
 
@@ -257,7 +265,7 @@ TODO: Replace this text with your explanation of how the design addresses requir
 >
 > Enter your response below.
 
-TODO: Replace this text with your explanation of how the design addresses requirement 1.4.
+The SRS, software requirement specifications, under functional requirements. Part of the processing to calculate the users birth year by subtracting their age from current year.
 
 ### 9. Check the Plan With an Example
 
@@ -273,9 +281,9 @@ TODO: Replace this text with your explanation of how the design addresses requir
 >
 > Enter your response below.
 
-* Current year: TODO: Replace with the current year from Test 1.
-* User name: TODO: Replace with the user name from Test 1.
-* User age: TODO: Replace with the user age from Test 1.
+* Current year: 2026
+* User name: TODO: Jordan
+* User age: TODO: 25
 
 #### Test Processing
 
@@ -289,7 +297,7 @@ TODO: Replace this text with your explanation of how the design addresses requir
 >
 > Enter your calculation below.
 
-User's approximate birth year = TODO: Replace with the calculation using the Test 1 values (e.g., current year - user age).
+User's approximate birth year = 2026 - 25
 
 #### Expected Output
 
@@ -299,7 +307,7 @@ User's approximate birth year = TODO: Replace with the calculation using the Tes
 >
 > Enter your response below.
 
-Expected output for Test 1:
+2001
 
 > Compare your hand-calculated result with the expected result:
 >
@@ -323,7 +331,7 @@ Expected output for Test 1:
 >
 > Enter your response below. Use a separate numbered bullet for each question or unclear item.
 
-1. TODO: Replace with your first question or unclear item, or enter **None** if everything is clear.
+1. None
 
 > If you cannot resolve a repository or course-IDE question, use the [Module Two Assignment GitHub Discussions](https://github.com/GC-STEM/it140-m2-assignment/discussions). Use [GitHub Issues](https://github.com/GC-STEM/it140-m2-assignment/issues) to report a technical problem with the provided repository files or tools. Contact your instructor through D2L Brightspace for questions about assignment requirements, grading, or feedback.
 
